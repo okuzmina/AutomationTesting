@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace Task1
 {
     class Program
@@ -16,9 +15,9 @@ namespace Task1
             Console.Write("Enter Z: ");
             int z = Convert.ToInt32(Console.ReadLine());
 
-            var result1 = (x+y) * (Math.Pow(z,2)+1);
+            var result1 = (x + y) * (Math.Pow(z,2) + 1);
             var result2 = (x % z - 1) * Math.Sqrt(y);
-            var result3 = ((x*y+y*z)/Math.Pow(z,3));
+            var result3 = ((x * y + y * z) / Math.Pow(z,3));
 
             Console.WriteLine();
             Console.WriteLine("First expression result: " + result1);

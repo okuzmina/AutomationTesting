@@ -16,10 +16,10 @@ namespace Task4
             string ch = Console.ReadLine();
 
             string conc = row1 + row2;
-            int index = conc.LastIndexOf(ch);
+            int lastIndex = conc.LastIndexOf(ch);
 
             Console.WriteLine();
-            Console.WriteLine("Index of " + ch + " in " + conc + ": " + index);
+            Console.WriteLine("Index of " + ch + " in " + conc + ": " + lastIndex);
             Console.ReadKey();
         }
     }

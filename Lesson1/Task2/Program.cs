@@ -15,7 +15,7 @@ namespace Task2
             Console.Write("Enter length: ");
             int length = Convert.ToInt32(Console.ReadLine());
 
-            var result = Math.Sqrt((Math.Pow(width,2)+Math.Pow(height,2)+Math.Pow(length,2)));
+            var result = Math.Sqrt((Math.Pow(width,2) + Math.Pow(height,2) + Math.Pow(length,2)));
 
             Console.WriteLine();
             Console.Write("Parallelepiped diagonal length: " + result);
