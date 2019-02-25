@@ -6,42 +6,43 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
-            double operand1 = 0, operand2 = 0;
+            double checkedInput = 0, operand1 = 0, operand2 = 0;
+
+            double Check()
+            {
+                string input = Console.ReadLine();
+                while (!double.TryParse(input, out checkedInput))
+                {
+                    Console.Write("Integer required! Try again: ");
+                    input = Console.ReadLine();
+                }
+                return checkedInput;
+            }
 
             Console.Write("Enter first operand: ");
-            string inputOperand1 = Console.ReadLine();
-            while (!double.TryParse(inputOperand1, out operand1))
-            {
-                Console.Write("Integer required! Try again: ");
-                inputOperand1 = Console.ReadLine();
-            }
+            operand1 = Check();
 
             Console.Write("\r\nEnter second operand: ");
-            string inputOperand2 = Console.ReadLine();
-            while (!double.TryParse(inputOperand2, out operand2))
-            {
-                Console.Write("Integer required! Try again: ");
-                inputOperand2 = Console.ReadLine();
-            }
+            operand2 = Check();
 
-            Console.Write("\r\nEnter operation: ");
+            Console.Write("\nEnter operation: ");
             char operation = Console.ReadKey().KeyChar;
             switch (operation)
             {
                 case '+':
-                    Console.WriteLine("{0} + {1} = {2}", operand1, operand2, operand1 + operand2);
+                    Console.WriteLine("\n{0} + {1} = {2}", operand1, operand2, operand1 + operand2);
                     break;
                 case '-':
-                    Console.WriteLine("{0} - {1} = {2}", operand1, operand2, operand1 - operand2);
+                    Console.WriteLine("\n{0} - {1} = {2}", operand1, operand2, operand1 - operand2);
                     break;
                 case '/':
-                    Console.WriteLine("{0} / {1} = {2}", operand1, operand2, operand1 / operand2);
+                    Console.WriteLine("\n{0} / {1} = {2}", operand1, operand2, operand1 / operand2);
                     break;
                 case '*':
-                    Console.WriteLine("{0} * {1} = {2}", operand1, operand2, operand1 * operand2);
+                    Console.WriteLine("\n{0} * {1} = {2}", operand1, operand2, operand1 * operand2);
                     break;
                 case '^':
-                    Console.WriteLine("{0} ^ {1} = {2}", operand1, operand2, Math.Pow(operand1, operand2));
+                    Console.WriteLine("\n{0} ^ {1} = {2}", operand1, operand2, Math.Pow(operand1, operand2));
                     break;
                 default:
                     Console.WriteLine("\nEntered operation doesn't exist.");

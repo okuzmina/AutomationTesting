@@ -6,31 +6,27 @@ namespace Task2
     {
         static void Main(string[] args)
         {
-            double width = 0, height = 0, length = 0;
+            double checkedInput = 0, width = 0, height = 0, length = 0;
+
+            double Check()
+            {
+                string input = Console.ReadLine();
+                while (!double.TryParse(input, out checkedInput))
+                {
+                    Console.Write("Integer required! Try again: ");
+                    input = Console.ReadLine();
+                }
+                return checkedInput;
+            }
 
             Console.Write("Enter width: ");
-            string widthInput = Console.ReadLine();
-            while (!double.TryParse(widthInput, out width))
-            {
-                Console.Write("Integer required! Try again: ");
-                widthInput = Console.ReadLine();
-            }
+            width = Check();
 
             Console.Write("\r\nEnter height: ");
-            string heightInput = Console.ReadLine();
-            while (!double.TryParse(heightInput, out height))
-            {
-                Console.Write("Integer required! Try again: ");
-                heightInput = Console.ReadLine();
-            }
+            height = Check();
 
             Console.Write("\r\nEnter length: ");
-            string lengthInput = Console.ReadLine();
-            while (!double.TryParse(lengthInput, out length))
-            {
-                Console.Write("Integer required! Try again: ");
-                lengthInput = Console.ReadLine();
-            }
+            length = Check();
 
             var result = Math.Sqrt((Math.Pow(width,2) + Math.Pow(height,2) + Math.Pow(length,2)));
 

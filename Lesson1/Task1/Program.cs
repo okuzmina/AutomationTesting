@@ -6,31 +6,27 @@ namespace Task1
     {
         static void Main(string[] args)
         {
-            double x = 0, y = 0, z = 0;
+            double checkedInput = 0, x = 0, y = 0, z = 0;
+
+            double Check()
+            {
+                string input = Console.ReadLine();
+                while (!double.TryParse(input, out checkedInput))
+                {
+                    Console.Write("Integer required! Try again: ");
+                    input = Console.ReadLine();
+                }
+                return checkedInput;
+            }
 
             Console.Write("Enter X: ");
-            string xInput = Console.ReadLine();
-            while (!double.TryParse(xInput, out x))
-            {
-                Console.Write("Integer required! Try again: ");
-                xInput = Console.ReadLine();
-            }
+            x = Check();
 
             Console.Write("\r\nEnter Y: ");
-            string yInput = Console.ReadLine();
-            while (!double.TryParse(yInput, out y))
-            {
-                Console.Write("Integer required! Try again: ");
-                yInput = Console.ReadLine();
-            }
+            y = Check();
 
             Console.Write("\r\nEnter Z: ");
-            string zInput = Console.ReadLine();
-            while (!double.TryParse(zInput, out z))
-            {
-                Console.Write("Integer required! Try again: ");
-                zInput = Console.ReadLine();
-            }
+            z = Check();
 
             double result1 = (x + y) * (Math.Pow(z,2) + 1);
             double result2 = (x % z - 1) * Math.Sqrt(y);
