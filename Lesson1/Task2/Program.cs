@@ -4,20 +4,20 @@ namespace Task2
 {
     class Program
     {
+        static double Check()
+        {
+            double checkedInput = 0;
+            string input = Console.ReadLine();
+            while (!double.TryParse(input, out checkedInput))
+            {
+                Console.Write("Integer required! Try again: ");
+                input = Console.ReadLine();
+            }
+            return checkedInput;
+        }
         static void Main(string[] args)
         {
-            double checkedInput = 0, width = 0, height = 0, length = 0;
-
-            double Check()
-            {
-                string input = Console.ReadLine();
-                while (!double.TryParse(input, out checkedInput))
-                {
-                    Console.Write("Integer required! Try again: ");
-                    input = Console.ReadLine();
-                }
-                return checkedInput;
-            }
+            double width = 0, height = 0, length = 0;
 
             Console.Write("Enter width: ");
             width = Check();

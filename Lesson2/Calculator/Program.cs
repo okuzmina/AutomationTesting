@@ -4,20 +4,20 @@ namespace Calculator
 {
     class Program
     {
+        static double Check()
+        {
+            double checkedInput = 0;
+            string input = Console.ReadLine();
+            while (!double.TryParse(input, out checkedInput))
+            {
+                Console.Write("Integer required! Try again: ");
+                input = Console.ReadLine();
+            }
+            return checkedInput;
+        }
         static void Main(string[] args)
         {
-            double checkedInput = 0, operand1 = 0, operand2 = 0;
-
-            double Check()
-            {
-                string input = Console.ReadLine();
-                while (!double.TryParse(input, out checkedInput))
-                {
-                    Console.Write("Integer required! Try again: ");
-                    input = Console.ReadLine();
-                }
-                return checkedInput;
-            }
+            double operand1 = 0, operand2 = 0;
 
             Console.Write("Enter first operand: ");
             operand1 = Check();
