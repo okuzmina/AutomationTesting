@@ -14,6 +14,7 @@ namespace Task4
 
             Console.Write("\r\nEnter character: ");
             char ch = Console.ReadKey().KeyChar;
+
             while (Char.IsControl(ch))
             {
                 Console.Write("Symbol is required! Try again: ");

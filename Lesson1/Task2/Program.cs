@@ -6,13 +6,15 @@ namespace Task2
     {
         static double Check()
         {
-            double checkedInput = 0;
+            int checkedInput = 0;
             string input = Console.ReadLine();
-            while (!double.TryParse(input, out checkedInput))
+
+            while (!Int32.TryParse(input, out checkedInput))
             {
                 Console.Write("Integer required! Try again: ");
                 input = Console.ReadLine();
             }
+
             return checkedInput;
         }
         static void Main(string[] args)
