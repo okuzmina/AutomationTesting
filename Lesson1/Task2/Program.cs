@@ -4,16 +4,31 @@ namespace Task2
 {
     class Program
     {
+        static double Check()
+        {
+            int checkedInput = 0;
+            string input = Console.ReadLine();
+
+            while (!Int32.TryParse(input, out checkedInput))
+            {
+                Console.Write("Integer required! Try again: ");
+                input = Console.ReadLine();
+            }
+
+            return checkedInput;
+        }
         static void Main(string[] args)
         {
+            double width = 0, height = 0, length = 0;
+
             Console.Write("Enter width: ");
-            int width = Convert.ToInt32(Console.ReadLine());
+            width = Check();
 
-            Console.Write("Enter height: ");
-            int height = Convert.ToInt32(Console.ReadLine());
+            Console.Write("\r\nEnter height: ");
+            height = Check();
 
-            Console.Write("Enter length: ");
-            int length = Convert.ToInt32(Console.ReadLine());
+            Console.Write("\r\nEnter length: ");
+            length = Check();
 
             var result = Math.Sqrt((Math.Pow(width,2) + Math.Pow(height,2) + Math.Pow(length,2)));
 
