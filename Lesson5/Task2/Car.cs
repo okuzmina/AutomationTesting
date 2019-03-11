@@ -34,6 +34,7 @@ namespace Task2
                         break;
                     }
             }
+
             return parts;
         }
     }

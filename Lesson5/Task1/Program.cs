@@ -16,6 +16,7 @@ namespace Lesson5
 
             return checkedInput;
         }
+
         static void Main()
         {
             Rectangle myRectangle = new Rectangle();
