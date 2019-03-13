@@ -6,6 +6,7 @@ namespace Task2
     {
         private string name;
         private string[] parts;
+        Calculator cost = null;
 
         public string Name { set; get; }
 
@@ -36,6 +37,21 @@ namespace Task2
             }
 
             return parts;
+        }
+
+        void InitialzeCost()
+        {
+            this.cost = new Calculator();
+        }
+
+        public int Cost(string[] parts)
+        {
+            InitialzeCost();
+            int sum;
+
+            sum = this.cost.Summary(parts);
+
+            return sum;
         }
     }
 }
