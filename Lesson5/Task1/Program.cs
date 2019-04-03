@@ -19,16 +19,16 @@ namespace Lesson5
 
         static void Main()
         {
-            Rectangle myRectangle = new Rectangle();
-
             Console.Write("Enter the first side: ");
-            myRectangle.Side1 = Check();
+            int side1 = Check();
 
             Console.Write("\nEnter the second side: ");
-            myRectangle.Side2 = Check();
+            int side2 = Check();
 
-            Console.WriteLine("\nArea of the rectangle with sides {0} and {1}: {2}", myRectangle.Side1, myRectangle.Side2, myRectangle.AreaCalculator(myRectangle.Side1, myRectangle.Side2));
-            Console.WriteLine("Perimetr of the rectangle with sides {0} and {1}: {2}", myRectangle.Side1, myRectangle.Side2, myRectangle.PerimetrCalculator(myRectangle.Side1, myRectangle.Side2));
+            Rectangle myRectangle = new Rectangle(side1, side2);
+
+            Console.WriteLine("\nArea of the rectangle: {0}", myRectangle.AreaCalculator());
+            Console.WriteLine("Perimetr of the rectangle: {0}", myRectangle.PerimetrCalculator());
             Console.ReadKey();
         }
     }

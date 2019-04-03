@@ -2,16 +2,13 @@
 {
     class Calculator
     {
-        private int summary;
-
-        public int Summary(string[] parts)
+        public static int Calculate(Car car)
         {
-            for (int i = 0; i < parts.Length; i++)
+            int summary = 0;
+            for (int i = 0; i < car.parts.Length; i++)
             {
-                CarParts sumPart = new CarParts();
-                summary = summary + sumPart.PartCost(parts[i]);
+                summary += car.parts[i].price;
             }
-
             return summary;
         }
     }

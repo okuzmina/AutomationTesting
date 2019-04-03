@@ -6,12 +6,41 @@ namespace Task2
     {
         static void Main()
         {
-            Car carInput = new Car();
+            CarParts wheel = new CarParts("Wheel", 160);
+            CarParts headlight = new CarParts("Headlight", 30);
+            CarParts bumper = new CarParts("Bumper", 90);
+            CarParts dashboard = new CarParts("Daqshboard", 70);
+            CarParts engine = new CarParts("Engine", 500);
+            Car kia = new Car("KIA", new CarParts[] {wheel, headlight, bumper});
+            Car vw = new Car("VW", new CarParts[] { wheel, engine});
+            Car opel = new Car("OPEL", new CarParts[] {wheel, dashboard, bumper});
 
             Console.Write("Enter one of the car names Kia, VW or Opel: ");
-            carInput.Name = Console.ReadLine().ToLower();
+            string carInput = Console.ReadLine().ToLower();
 
-            Console.Write("Summary cost of parts is: {0}", carInput.Cost(carInput.Parts(carInput.Name)));
+            switch (carInput)
+            {
+                case "kia":
+                    {
+                        Console.Write("Summary cost of parts is: {0}", Calculator.Calculate(kia));
+                        break;
+                    }
+                case "vw":
+                    {
+                        Console.Write("Summary cost of parts is: {0}", Calculator.Calculate(vw));
+                        break;
+                    }
+                case "opel":
+                    {
+                        Console.Write("Summary cost of parts is: {0}", Calculator.Calculate(opel));
+                        break;
+                    }
+                default:
+                    {
+                        Console.WriteLine("Undefined car");
+                        break;
+                    }
+            }
             Console.ReadKey();
         }
     }

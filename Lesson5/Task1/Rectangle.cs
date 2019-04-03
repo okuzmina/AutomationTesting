@@ -2,21 +2,25 @@
 {
     class Rectangle
     {
-        private int side1, side2;
+        private int Side1 { get; set; }
 
-        public int Side1 { get; set; }
+        private int Side2 { get; set; }
 
-        public int Side2 { get; set; }
-
-        public int AreaCalculator(int side1, int side2)
+        public Rectangle(int side1, int side2)
         {
-            int area = side1 * side2;
+            Side1 = side1;
+            Side2 = side2;
+        }
+
+        public int AreaCalculator()
+        {
+            int area = Side1 * Side2;
             return area;
         }
 
-        public int PerimetrCalculator(int side1, int side2)
+        public int PerimetrCalculator()
         {
-            int perimetr = 2 * (side1 + side2);
+            int perimetr = 2 * (Side1 + Side2);
             return perimetr;
         }
     }
