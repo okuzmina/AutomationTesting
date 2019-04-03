@@ -4,20 +4,35 @@ namespace Task1
 {
     class Program
     {
+        static double Check()
+        {
+            int checkedInput = 0;
+            string input = Console.ReadLine();
+
+            while (!Int32.TryParse(input, out checkedInput))
+            {
+                Console.Write("Integer required! Try again: ");
+                input = Console.ReadLine();
+            }
+
+            return checkedInput;
+        }
         static void Main(string[] args)
         {
+            double x = 0, y = 0, z = 0;
+
             Console.Write("Enter X: ");
-            int x = Convert.ToInt32(Console.ReadLine());
+            x = Check();
 
-            Console.Write("Enter Y: ");
-            int y = Convert.ToInt32(Console.ReadLine());
+            Console.Write("\r\nEnter Y: ");
+            y = Check();
 
-            Console.Write("Enter Z: ");
-            int z = Convert.ToInt32(Console.ReadLine());
+            Console.Write("\r\nEnter Z: ");
+            z = Check();
 
-            var result1 = (x + y) * (Math.Pow(z,2) + 1);
-            var result2 = (x % z - 1) * Math.Sqrt(y);
-            var result3 = ((x * y + y * z) / Math.Pow(z,3));
+            double result1 = (x + y) * (Math.Pow(z,2) + 1);
+            double result2 = (x % z - 1) * Math.Sqrt(y);
+            double result3 = ((x * y + y * z) / Math.Pow(z,3));
 
             Console.WriteLine();
             Console.WriteLine("First expression result: " + result1);
