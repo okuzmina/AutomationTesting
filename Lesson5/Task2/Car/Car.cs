@@ -2,13 +2,13 @@
 {
     class Car
     {
-        public string name { get; set; }
-        public CarParts[] parts { get; set; }
+        public string Name { get; set; }
+        public CarParts[] Parts { get; set; }
 
         public Car(string name, CarParts[] parts)
         {
-            this.name = name;
-            this.parts = parts;
+            this.Name = name;
+            this.Parts = parts;
         }
     }
 }

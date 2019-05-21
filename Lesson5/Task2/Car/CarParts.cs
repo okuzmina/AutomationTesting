@@ -2,13 +2,13 @@
 {
     class CarParts
     {
-        public string name { get; set; }
-        public int price { get; set; }
+        public string Name { get; set; }
+        public int Price { get; set; }
 
         public CarParts(string name, int price)
         {
-            this.name = name;
-            this.price = price;
+            this.Name = name;
+            this.Price = price;
         }
     }
 }
