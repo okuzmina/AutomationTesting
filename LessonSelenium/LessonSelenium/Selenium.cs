@@ -36,10 +36,11 @@ namespace LessonSelenium
         [Test]
         public void SeleniumTest()
         {
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             _driver.Navigate().GoToUrl("https://regression.surpass-preview.com/secureassess/htmldelivery/?isFake=true");
 
             var inputField = WaitElement(_inputField);
-            var okButton = WaitElement(_inputField);
+            var okButton = WaitElement(_okButton);
 
             Assert.IsTrue(inputField.Displayed);
             Assert.IsTrue(okButton.Enabled);
@@ -90,7 +91,7 @@ namespace LessonSelenium
 
         private IWebElement WaitElement(By elementLocator)
         {
-            return new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(elementLocator))[0];
+            return new WebDriverWait(_driver, TimeSpan.FromSeconds(20)).Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(elementLocator))[0];
         }
     }
 }
