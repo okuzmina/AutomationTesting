@@ -91,7 +91,7 @@ namespace LessonSelenium
 
         private IWebElement WaitElement(By elementLocator)
         {
-            return new WebDriverWait(_driver, TimeSpan.FromSeconds(20)).Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(elementLocator))[0];
+            return new WebDriverWait(_driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(elementLocator))[0];
         }
     }
 }
