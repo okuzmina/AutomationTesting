@@ -38,7 +38,7 @@ namespace LessonSelenium
         {
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             _driver.Navigate().GoToUrl("https://regression.surpass-preview.com/secureassess/htmldelivery/?isFake=true");
-
+            
             var inputField = WaitElement(_inputField);
             var okButton = WaitElement(_okButton);
 
@@ -70,23 +70,23 @@ namespace LessonSelenium
             var startButton = WaitElement(_startButton);
             Assert.AreEqual(_driver.Url, "https://regression.surpass-preview.com/secureassess/htmldelivery/?isFake=true#!/test/items");
             Assert.IsTrue(startButton.Enabled);
-
-            startButton.Click();
+ 
+            startButton.SendKeys(Keys.Enter);
 
             var finishExamButton = WaitElement(_finishExamButton);
             Assert.IsTrue(finishExamButton.Enabled);
 
-            finishExamButton.Click();
+            finishExamButton.SendKeys(Keys.Enter);
 
             var finishConfirmButton = WaitElement(_finishConfirmButton);
             Assert.IsTrue(finishConfirmButton.Enabled);
 
-            finishConfirmButton.Click();
+            finishConfirmButton.SendKeys(Keys.Enter);
 
             var finishConfirmButton2 = WaitElement(_finishConfirmButton2);
             Assert.IsTrue(finishConfirmButton2.Enabled);
 
-            finishConfirmButton2.Click();
+            finishConfirmButton2.SendKeys(Keys.Enter);
         }
 
         private IWebElement WaitElement(By elementLocator)
